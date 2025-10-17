@@ -1,7 +1,3 @@
-Aqui está um **README.md** completo e bem estruturado para o seu projeto 👇
-
----
-
 # 💧 Medidor de Volume de Água com ESP32 + Sensor Ultrassônico
 
 Este projeto utiliza um **ESP32** como microcontrolador para realizar leituras de um **sensor ultrassônico**, calcular o **volume de água restante em um recipiente** e exibir os dados em uma **interface web**, acessível via Wi-Fi.
@@ -107,7 +103,3 @@ O código está dividido em duas partes principais:
 
 Este projeto pode ser utilizado para fins **educacionais e experimentais** livremente.
 Modificações são bem-vindas para aprimorar o design, cálculos ou interface.
-
----
-
-Quer que eu gere esse README como arquivo `README.md` para download? 📝💾
