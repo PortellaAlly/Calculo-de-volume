@@ -8,8 +8,8 @@ const char *password = "123456789"; // senha da rede
 // Declaração de variáveis e pinos
 int echo = 26;
 int trig = 27;
-int areabase = 106.53;
-int altura = 4.5;
+double areabase = 106.53;
+double altura = 4.5;
 
 // Set web server port number to 80
 WiFiServer server(80);
@@ -106,37 +106,37 @@ void loop()
 
                         // Display the HTML web page
                         client.println("<!DOCTYPE html><html>");
-                        client.println("<head><meta http-equiv=\"refresh\" content=\"1\" /> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">");
+                        client.println("<head><meta http-equiv=\"refresh\" content=\"2\" /> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">");
                         client.println("<link rel=\"icon\" href=\"data:,\">");
 
                         client.println("<style>html, body { background-color: #000000; margin: 0; padding: 0; font-family: 'Poppins', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: #f1f1f1; }");
-                        client.println("h1 { font-size: 2.5rem; font-weight: 700; color: #3b82f6; margin-top: 40px; margin-bottom: 20px; text-align: center; }");
+                        client.println("h1 { font-size: 2rem; font-weight: 700; color: #3b82f6; margin-top: 40px; margin-bottom: 20px; text-align: center; }");
                         client.println(".descricao { background-color: #1a1a1a; max-width: 800px; margin: 0 auto 30px auto; padding: 20px; border-radius: 16px; line-height: 1.6; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); }");
                         client.println(".descricao p { margin: 10px 0; font-size: 1rem; text-align: left; }");
                         client.println(".medidas-container { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; max-width: 900px; margin: 0 auto 30px auto; }");
                         client.println(".medidas { background-color: #1a1a1a; flex: 1 1 250px; padding: 15px; border-radius: 12px; text-align: center; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); transition: transform 0.2s ease, box-shadow 0.2s ease; }");
                         client.println(".medidas h3 { margin: 0; font-size: 1.1rem; font-weight: 500; }");
                         client.println(".medidas span { font-weight: 700; font-size: 1.3rem; color: #f6f8fc; }");
-                        client.println(".creditos { text-align: center; padding: 20px; font-size: 0.9rem; border-top: 1px solid #222; color: #bbb; }");
+                        client.println(".creditos { text-align: center; padding: 20px; font-size: 0.9rem; border-top: 1px solid #222; color: #bbb; }</style>");
 
-                        client.println("<body> <h1>Cálculo de volume da água</h1>");
-                        client.println("<div class=\"descricao\"><p>O projeto foi feito feito com o intuito de calcular o volume da água dentro de um recipiente geométrico.</p>");
-                        client.println("<p>O cálculo é feito através de um sensor ultrassônico que mede a distância entre o sensor e a superfície da água.</p> </div>");
+                        client.println("<body> <h1>Calculo de volume da agua</h1>");
+                        client.println("<div class=\"descricao\"><p>O projeto foi feito feito com o intuito de calcular o volume da agua dentro de um recipiente geometrico.</p>");
+                        client.println("<p>O calculo e feito atraves de um sensor ultrassonico que mede a distancia entre o sensor e a superficie da agua.</p> </div>");
 
-                        client.println("<div class=\"medidas-container\"> <div class=\"medidas\"> <h3>Distância = <span id=\"distancia\">");
+                        client.println("<div class=\"medidas-container\"> <div class=\"medidas\"> <h3>Distancia = <span id=\"distancia\">");
                         client.println(distancia);
                         client.println("</span> cm</h3></div>");
 
                         client.println("</h1>");
                         client.println("<div class=\"medidas\"> <h3>Volume no recipiente = <span id=\"volume\">");
                         client.println(volume);
-                        client.println("</span> cm³</h3> </div>");
+                        client.println("</span> cm cubicos</h3> </div>");
                         client.println("<div class=\"medidas\"><h3>Volume para encher = <span id=\"falta\">");
                         client.println(faltante);
-                        client.println("</span> cm³</h3></div></div>");
+                        client.println("</span> cm cubicos</h3></div></div>");
 
                         client.println("<div class=\"creditos\"> <p>Feito por: <strong>Allyson e Gustavo</strong></p>");
-                        client.println("<p>Com o apoio e auxílio do professor Antonio</p></div></body></html>");
+                        client.println("<p>Com o apoio e auxilio do professor Antonio</p></div></body></html>");
 
                         break;
                     }
@@ -158,6 +158,9 @@ void loop()
         Serial.println("Client disconnected.");
         Serial.println("");
     }
-    Serial.println(distancia);
+    Serial.print("Endereço IP: ");
+    Serial.println(WiFi.softAPIP());
+
+
     delay(300);
 }
