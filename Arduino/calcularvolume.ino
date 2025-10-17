@@ -120,7 +120,7 @@ void loop()
                         client.println(".creditos { text-align: center; padding: 20px; font-size: 0.9rem; border-top: 1px solid #222; color: #bbb; }");
 
                         client.println("<body> <h1>Cálculo de volume da água</h1>");
-                        client.println("<div class="descricao"><p>O projeto foi feito com o intuito de calcular o volume da água dentro de um recipiente geométrico.</p>");
+                        client.println("<div class=\"descricao\"><p>O projeto foi feito feito com o intuito de calcular o volume da água dentro de um recipiente geométrico.</p>");
                         client.println("<p>O cálculo é feito através de um sensor ultrassônico que mede a distância entre o sensor e a superfície da água.</p> </div>");
 
                         client.println("<div class=\"medidas-container\"> <div class=\"medidas\"> <h3>Distância = <span id=\"distancia\">");
@@ -128,10 +128,13 @@ void loop()
                         client.println("</span> cm</h3></div>");
 
                         client.println("</h1>");
-                        client.println("<div class="medidas"> <h3>Volume no recipiente = <span id="volume">");
+                        client.println("<div class=\"medidas\"> <h3>Volume no recipiente = <span id=\"volume\">");
                         client.println(volume);
                         client.println("</span> cm³</h3> </div>");
-                        client.println("<div class="medidas"><h3>Volume para encher = <span id="falta">--</span> cm³</h3></div></div>");
+                        client.println("<div class=\"medidas\"><h3>Volume para encher = <span id=\"falta\">");
+                        client.println(faltante);
+                        client.println("</span> cm³</h3></div></div>");
+
                         client.println("<div class=\"creditos\"> <p>Feito por: <strong>Allyson e Gustavo</strong></p>");
                         client.println("<p>Com o apoio e auxílio do professor Antonio</p></div></body></html>");
 
