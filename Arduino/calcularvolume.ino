@@ -106,10 +106,10 @@ void loop()
 
                         // Display the HTML web page
                         client.println("<!DOCTYPE html><html>");
-                        client.println("<head><meta http-equiv=" refresh " content=" 1 " /> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">");
+                        client.println("<head><meta http-equiv=\"refresh\" content=\"1\" /> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">");
                         client.println("<link rel=\"icon\" href=\"data:,\">");
 
-                        client.println("<style>html, body { background-color: #000000; margin: 0; padding: 0; font-family: " Poppins ", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: #f1f1f1;}");
+                        client.println("<style>html, body { background-color: #000000; margin: 0; padding: 0; font-family: 'Poppins', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; color: #f1f1f1; }");
                         client.println("h1 { font-size: 2.5rem; font-weight: 700; color: #3b82f6; margin-top: 40px; margin-bottom: 20px; text-align: center; }");
                         client.println(".descricao { background-color: #1a1a1a; max-width: 800px; margin: 0 auto 30px auto; padding: 20px; border-radius: 16px; line-height: 1.6; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); }");
                         client.println(".descricao p { margin: 10px 0; font-size: 1rem; text-align: left; }");
@@ -123,16 +123,18 @@ void loop()
                         client.println("<div class="descricao"><p>O projeto foi feito com o intuito de calcular o volume da água dentro de um recipiente geométrico.</p>");
                         client.println("<p>O cálculo é feito através de um sensor ultrassônico que mede a distância entre o sensor e a superfície da água.</p> </div>");
 
-                        client.println("<div class="medidas-container"> <div class="medidas"> <h3>Distância = <span id="distancia">)"
+                        client.println("<div class=\"medidas-container\"> <div class=\"medidas\"> <h3>Distância = <span id=\"distancia\">");
                         client.println(distancia);
-                        client.println("</span> cm</h3> </div>");
+                        client.println("</span> cm</h3></div>");
+
                         client.println("</h1>");
                         client.println("<div class="medidas"> <h3>Volume no recipiente = <span id="volume">");
                         client.println(volume);
                         client.println("</span> cm³</h3> </div>");
                         client.println("<div class="medidas"><h3>Volume para encher = <span id="falta">--</span> cm³</h3></div></div>");
-                        client.println("<div class="creditos"> <p>Feito por: <strong>Allyson e Gustavo</strong></p>");
-                        client.println("<p>Com o apoio e auxílio do professor Antonio</p></div></body></html>")
+                        client.println("<div class=\"creditos\"> <p>Feito por: <strong>Allyson e Gustavo</strong></p>");
+                        client.println("<p>Com o apoio e auxílio do professor Antonio</p></div></body></html>");
+
                         break;
                     }
                     else
