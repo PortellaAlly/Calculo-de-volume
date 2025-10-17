@@ -96,10 +96,3 @@ O código está dividido em duas partes principais:
 
 * 👨‍💻 **Allyson** e **Gustavo** — Desenvolvimento do projeto e código.
 * 👨‍🏫 **Professor Antonio** — Apoio técnico e orientação.
-
----
-
-## 📄 Licença
-
-Este projeto pode ser utilizado para fins **educacionais e experimentais** livremente.
-Modificações são bem-vindas para aprimorar o design, cálculos ou interface.
