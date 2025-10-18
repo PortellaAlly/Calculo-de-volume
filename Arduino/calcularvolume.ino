@@ -9,7 +9,9 @@ const char *password = "123456789"; // senha da rede
 int echo = 26;
 int trig = 27;
 double areabase = 106.53;
-double altura = 4.5;
+double altura = 4.6;
+double alturabase= 8.3;
+
 
 // Set web server port number to 80
 WiFiServer server(80);
@@ -47,26 +49,29 @@ void setup()
 // Função para medir a distância
 double medirdist()
 {
+    double distancia = 0;
+    for (int i = 0; i < 5; i++) {
     digitalWrite(trig, HIGH);
     delay(5);
     digitalWrite(trig, LOW);
 
     int tempo = pulseIn(echo, HIGH);
-    double distancia = tempo * 0.034 / 2.0;
-    return distancia;
+    distancia += tempo * 0.034 / 2.0;
+}
+    return distancia/5.0;
 }
 
 // Função para calcular o volume do líquido no recipiente
 double calcularvolume(double distancia)
 { // Não sei se esse calculo está correto
-    double volume = areabase * (altura - distancia);
+    double volume = areabase * (distancia - alturabase);
     return volume;
 }
 
 // Função para achar o que falta para encher o recipiente
 double calcularfaltante(double distancia)
 {
-    double volume = areabase * (altura - distancia);
+    double volume = areabase * (distancia-alturabase);
     double faltante = (areabase * altura) - volume;
     return faltante;
 }
