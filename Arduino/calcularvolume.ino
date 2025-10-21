@@ -62,10 +62,18 @@ double medirdist()
 }
 
 // Função para calcular o volume do líquido no recipiente
-double calcularvolume(double distancia)
+double calcularvolume(double distan    xczxc  z    cxc cia)
 { // Não sei se esse calculo está correto
     double volume = areabase * (distancia - alturabase);
+
+    if(volume>20){
     return volume;
+    }
+    else{
+      volume = 0;
+      return volume;
+    }
+  
 }
 
 // Função para achar o que falta para encher o recipiente
@@ -73,7 +81,13 @@ double calcularfaltante(double distancia)
 {
     double volume = areabase * (distancia-alturabase);
     double faltante = (areabase * altura) - volume;
+    if(faltante>10){
     return faltante;
+    }
+    else{
+      faltante = 0;
+      return faltante;
+    }
 }
 
 void loop()
@@ -83,6 +97,7 @@ void loop()
     double faltante = calcularfaltante(distancia);
     WiFiClient client = server.available(); // Listen for incoming clients
 
+    
     if (client)
     {                                  // If a new client connects,
         Serial.println("New Client."); // print a message out in the serial port
@@ -134,10 +149,10 @@ void loop()
 
                         client.println("</h1>");
                         client.println("<div class=\"medidas\"> <h3>Volume no recipiente = <span id=\"volume\">");
-                        client.println(volume);
+                        client.println(faltante);
                         client.println("</span> cm cubicos</h3> </div>");
                         client.println("<div class=\"medidas\"><h3>Volume para encher = <span id=\"falta\">");
-                        client.println(faltante);
+                        client.println(volume);
                         client.println("</span> cm cubicos</h3></div></div>");
 
                         client.println("<div class=\"creditos\"> <p>Feito por: <strong>Allyson e Gustavo</strong></p>");
